@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Crear_Cuenta">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/lblUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:text="Crear Usuario"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtNombre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="313dp"
+                android:layout_height="49dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Nombre(s)"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.139" />
+
+            <EditText
+                android:id="@+id/txtApeP"
+                android:layout_width="313dp"
+                android:layout_height="49dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Apellido Paterno"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+                app:layout_constraintVertical_bias="0.044" />
+
+            <EditText
+                android:id="@+id/txtApeM"
+                android:layout_width="313dp"
+                android:layout_height="49dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Apellido Materno"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtApeP"
+                app:layout_constraintVertical_bias="0.038" />
+
+            <EditText
+                android:id="@+id/txtFechaN"
+                android:layout_width="313dp"
+                android:layout_height="49dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:digits="0"
+                android:ems="15"
+                android:hint="Fecha de Nacimiento"
+                android:inputType="date"
+                android:onClick="ShowDate"
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtApeM"
+                app:layout_constraintVertical_bias="0.044" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="307dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10dp"
+                android:text="Sexo"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txtNombre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFechaN"
+                app:layout_constraintVertical_bias="0.116">
+
+                <RadioButton
+                    android:id="@+id/radioF"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Femenino"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/radioM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/txtNumA"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Número de afiliación"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                app:layout_constraintVertical_bias="0.079" />
+
+            <EditText
+                android:id="@+id/txtCorreo"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Correo"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumA"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <EditText
+                android:id="@+id/txtUsuarioN"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Nombre de Usuario"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumA"
+                app:layout_constraintVertical_bias="0.134" />
+
+            <EditText
+                android:id="@+id/txtPass"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCorreo"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <EditText
+                android:id="@+id/txtPass2"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/bordes_redondos"
+                android:text="Registrar Usuario"
+                android:onClick="onClickGuardarUsuario"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

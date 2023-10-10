@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Preregistro">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:text="Bienvenido/a"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/lblUsuario"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Usuario"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/lblAfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Afiliacion"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Sintomas"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/txtDescripcion"
+                android:layout_width="313dp"
+                android:layout_height="300dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="@color/black"
+                android:hint="Describa su malestar"
+                android:textColorHint="#696969"
+                android:backgroundTint="#313E69"
+                android:maxLines="15"/>
+
+            <EditText
+                android:id="@+id/txtPeso"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:text=""
+                android:textColor="@color/black"
+                android:hint="Peso"
+                android:backgroundTint="#313E69"
+                android:textColorHint="#696969"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/txtEstatura"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:text=""
+                android:textColor="@color/black"
+                android:hint="Estatura"
+                android:backgroundTint="#313E69"
+                android:textColorHint="#696969"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtTemp"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Temperatura"
+                android:inputType="numberDecimal"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969" />
+
+            <EditText
+                android:id="@+id/txtFrecResp"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Frecuencia Respiratoria"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969" />
+
+            <EditText
+                android:id="@+id/txtPresionA"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#313E69"
+                android:ems="10"
+                android:hint="Presión arterial"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#696969" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:text="Enviar preregistro"
+                android:onClick="onClickEnviarPreregistro"
+                android:background="@drawable/bordes_redondos"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
