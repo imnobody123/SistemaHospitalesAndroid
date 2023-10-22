@@ -59,7 +59,7 @@ public class Preregistro extends AppCompatActivity {
 
     public void onClickEnviarPreregistro(View view)
     {
-        String URL = "http://192.168.1.66/WebServiceHospitales/Insertar_Urgencias.php";
+        String URL = "http://192.168.1.72/WebServiceHospitales/Insertar_Urgencias.php";
         String N_Afiliacion = TEXTUAFILIACION.getText().toString();
         String Peso = CAMPO_PESO.getText().toString();
         String Estatura = CAMPO_ESTATURA.getText().toString();

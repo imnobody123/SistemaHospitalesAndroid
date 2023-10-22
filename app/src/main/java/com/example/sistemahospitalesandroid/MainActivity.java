@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickIngresar(View v)
     {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String URL = "http://192.168.1.66/WebServiceHospitales/Verifica_Credenciales.php";
+        String URL = "http://192.168.1.72/WebServiceHospitales/Verifica_Credenciales.php";
         String Usuario = CAMPO_USUARIO.getText().toString();
         String Contrasena = CAMPO_CONTRASENA.getText().toString();
 
