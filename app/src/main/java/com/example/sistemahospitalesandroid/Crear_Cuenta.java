@@ -24,6 +24,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import Cifrar.Contrasena_MD5;
+
 public class Crear_Cuenta extends AppCompatActivity {
 
     EditText CAMPO_NOMBRE;
@@ -73,6 +75,7 @@ public class Crear_Cuenta extends AppCompatActivity {
             Sexo = "Masculino";
         }
 
+
         String Correo = CAMPO_CORREO.getText().toString();
         String Usuario = CAMPO_USUARIO.getText().toString();
         String Pass1 = CAMPO_CONTRASENA.getText().toString();
@@ -82,6 +85,9 @@ public class Crear_Cuenta extends AppCompatActivity {
 
         if(Pass1.equals(Pass2))
         {
+            Contrasena_MD5 MD5 = new Contrasena_MD5();
+            String Pass_Cifrada = MD5.getMD5(Pass1);
+            System.out.println("La pass es " + Pass_Cifrada);
             ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.show();
             StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -91,6 +97,10 @@ public class Crear_Cuenta extends AppCompatActivity {
                     if (response.contains("Datos Ingresados Correctamente"))
                     {
                         progressDialog.dismiss();
+                        System.out.println("Nombre " + Nombre);
+                        System.out.println("Apellido Paterno" + Apellido_P);
+                        System.out.println("Apellido Materno" + Apellido_M);
+                        System.out.println("Fecha de nacimiento" + Fecha_N);
                         Toast toast = Toast.makeText(Crear_Cuenta.this, "Datos Igresados Correctamente", Toast.LENGTH_SHORT);
                         toast.show();
                     }
@@ -122,7 +132,7 @@ public class Crear_Cuenta extends AppCompatActivity {
                     params.put("SEXO", finalSexo);
                     params.put("CORREO", Correo);
                     params.put("USUARIO", Usuario);
-                    params.put("CONTRASENA", Pass1);
+                    params.put("CONTRASENA", Pass_Cifrada);
                     params.put("TIPO_USUARIO", "PACIENTE");
                     return params;
                 }

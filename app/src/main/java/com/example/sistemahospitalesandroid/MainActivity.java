@@ -25,6 +25,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import Cifrar.Contrasena_MD5;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText CAMPO_USUARIO;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         String URL = "http://192.168.1.72/WebServiceHospitales/Verifica_Credenciales.php";
         String Usuario = CAMPO_USUARIO.getText().toString();
         String Contrasena = CAMPO_CONTRASENA.getText().toString();
+
+        Contrasena_MD5 MD5 = new Contrasena_MD5();
+        String Pass_Cifrada = MD5.getMD5(Contrasena);
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.show();
@@ -81,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String>params = new HashMap<String, String>();
                 params.put("USUARIO", Usuario);
-                params.put("PASSWORD", Contrasena);
+                params.put("PASSWORD", Pass_Cifrada);
                 return params;
             }
         };
